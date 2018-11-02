@@ -13,11 +13,12 @@ public class AddRepositoryTest extends TestBase {
 
     @Test
     public void testAddRepository() {
-        UserData userData = new UserData("maksoh_35@mail.ru", "password");
-        RepositoryData repositoryData = new RepositoryData("My project3");
-        goToHomePage();
-        doLogin(userData);
-        createRepository(repositoryData);
+        UserData userData = new UserData("maksoh_35@mail.ru", "lolxaxlol");
+        RepositoryData repositoryData = new RepositoryData("My project6");
+//        manager.getNavigationHelper().openHomepage();
+        manager.getNavigationHelper().openLoginPage();
+        manager.getAuthHelper().doLogin(userData);
+        manager.getRepositoryCreationHelper().createRepository(repositoryData);
     }
 
 }
