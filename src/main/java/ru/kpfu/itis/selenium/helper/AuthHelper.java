@@ -21,4 +21,9 @@ public class AuthHelper extends HelperBase {
         driver.findElement(By.id("user_password")).sendKeys(userData.getPassword());
         driver.findElement(By.name("commit")).click();
     }
+
+    public String getUserLogin() {
+        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Contribute to GitLab'])[1]/following::a[1]")).click();
+        return driver.findElement(By.className("current-user")).getText();
+    }
 }

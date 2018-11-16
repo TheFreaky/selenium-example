@@ -24,7 +24,7 @@ public class TestBase {
     @After
     public void tearDown() {
         manager.getDriver().quit();
-        String verificationErrorString = manager.getRepositoryCreationHelper().getVerificationErrors().toString();
+        String verificationErrorString = manager.getRepositoryHelper().getVerificationErrors().toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);
         }
