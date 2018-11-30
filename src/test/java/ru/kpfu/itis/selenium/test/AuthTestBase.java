@@ -1,12 +1,9 @@
 package ru.kpfu.itis.selenium.test;
 
 import lombok.Data;
-import org.junit.After;
 import org.junit.Before;
-import ru.kpfu.itis.selenium.manager.AppManager;
+import ru.kpfu.itis.selenium.config.Setting;
 import ru.kpfu.itis.selenium.model.UserData;
-
-import static org.junit.Assert.fail;
 
 /**
  * 26.10.18
@@ -19,7 +16,7 @@ public class AuthTestBase extends TestBase {
     public void setUp() {
         super.setUp();
 
-        UserData userData = new UserData("maksoh_35@mail.ru", "password");
+        UserData userData = new UserData(Setting.getLogin(), Setting.getPassword());
         manager.getNavigationHelper().openLoginPage();
         manager.getAuthHelper().doLogin(userData);
     }
